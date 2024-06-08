@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery.js"></script>
+    <title>Create new daily income analysis</title>
+</head>
+<body>
+ <div class="container">
+    <div class="row wrapper">
+        <div class="col-md-6">
+            <span>input income and expenditure data</span>
+             <div class="border pd">
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">Account Name</label>
+                    <div class="col-sm-8">
+                      <input type="date" name="" id="date" class="form-control">
+                    </div>
+                  </div>
+             
+                  <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-3 col-form-label">Account Name</label>
+                <div class="col-sm-8">
+                  <input type="text" name="" id="title" class="form-control" placeholder="enter title. eg communion sunday">
+                </div>
+                  </div>
+              </div>    
+                 <hr>
+                  <span>Add Receipt Items</span>
+                 <div class="border pd">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Revenue Item</th>
+                                <th>amount</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>
+                                <input type="text" name="" id="revTitle" class="form-control">
+                            </td>
+                            <td>
+                                <input type="text" name="" id="revAmt" class="form-control">
+                            </td>
+                            <td><a href="" class="btn btn-sm addRev"><i class="fa fa-plus"></i></a></td>
+                        </tr>
+                    </table>
+                 </div> 
+                <hr>
+                <span>Add Expenditure Items</span>
+                   <div class="border pd">
+                       <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Expenditure Item</th>
+                                <th>amount</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>
+                                <input type="text" name="" id="expTitle" class="form-control">
+                            </td>
+                            <td>
+                                <input type="text" name="" id="expAmt" class="form-control">
+                            </td>
+                            <td><a href="" class="btn btn-sm addExp"><i class="fa fa-plus"></i></a></td>
+                        </tr>
+                       </table>
+                   </div>
+                <hr>
+                <span>Add Notes</span>
+                <div class="border pd">
+                    <table class="table">
+                        <tr>
+                            <td>
+                                <input type="text" name="" id="noteItem" class="form-control" placeholder="create a note">
+                            </td>
+                            <td><a href="" class="btn btn-sm addNote"><i class="fa fa-plus"></i></a></td>
+                        </tr>
+                    </table>
+                </div> 
+        </div>
+        <div class="col-md-6">
+            <div class="border pd">
+                <h4 class="text-center titleId"></h4>
+                <h6 class="text-center">Income expenditure analysi as at <span class="dateId"></span></h6>
+                <hr>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                Income Items
+                            </th>
+                            <th class="rt">Amount</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody class="rev">
+                     
+                    </tbody>
+                   <tr class="text-green">
+                     <td class="text-bold">Total Revenue</td>
+                     
+                     <td></td>
+                     <td class="rt tR"></td>
+                   </tr>
+                 </table>
+                 <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                Expenditure Items
+                            </th>
+                            <th class="rt">Amount</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody class="exp">
+                     
+                    </tbody>
+                   <tr class="text-red">
+                     <td class="text-bold">Total Expenditure</td>
+                     
+                     <td></td>
+                     <td class="rt tE"></td>
+                   </tr>
+                   <tr class="bold-text">
+                     <td>Net Income</td>
+                     
+                     <td></td>
+                     <td class="rt"><span class="nR"></span></td>
+                   </tr>
+                 </table><hr>
+    
+                 <h6>Additional Notes</h6>
+                 <table class="table">
+                  <tbody class="notes">
+                     
+                  </tbody>
+                </table>
+    
+                <hr>
+            </div>
+        </div>
+        <hr>
+         
+    </div>
+    <hr>
+    <div class="clearfix">
+        <button class="btn btn-sm btn-secondary pull-right" id="recordAnalysis">Record</button>
+    </div>
+    <hr>
+ </div>
+<script type="module" src="./js/analysis.js"></script>    
+</body>
+</html>

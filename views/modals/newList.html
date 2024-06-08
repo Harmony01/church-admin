@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/jquery.js"></script>
+    <title>create new list</title>
+</head>
+<body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 wrapper">
+            <span>create new list</span>
+            <div class="border pd">
+                <div class="row form-group">
+                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="date">Name <span class="required">*</span>:
+                    </label>
+                   <div class="col-md-6 col-sm-6 ">
+                     <input type="text" id="name" name="" class="form-control" required>
+                   </div>
+              </div>
+              <div class="row form-group">
+                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="date">Telephone <span class="required">*</span>:
+                    </label>
+                  <div class="col-md-6 col-sm-6 ">
+                     <input type="tel" name="" id="tel" class="form-control">
+                   </div>
+              </div>
+              <div class="row form-group">
+                <label class="col-form-label col-md-3 col-sm-3 label-align" for="date">Amount pledged <span class="required">*</span>:
+                </label>
+              <div class="col-md-6 col-sm-6 ">
+                 <input type="text" name="" id="amount" class="form-control">
+               </div>
+          </div>
+          <hr>
+          <div class="clearfix">
+             <button class="btn btn-sm btn-secondary pull-right" id="createNewlist">create</button>
+         </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="../js/pledge.js"></script>
+</body>
+</html>

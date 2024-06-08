@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery.js"></script>
+    <title>Calculator</title>
+    <style>
+        body{
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+     <div class="row wrapper">
+        <div class="col-md-6">
+            <span>Notes</span>
+           <div class="border pd">
+              <table class="table">
+                <tr>
+                   <th>Notes</th>
+                   <th>Qty</th>
+                   <th class="rt">Value</th>
+                </tr>
+                <tr>
+                    <td>GHS 200</td>
+                    <td>
+                        <input type="text" name="" id="denom" class="200" style="width:30%;">
+                    </td>
+                    <td class="rt">
+                        <span>0.00</span>
+                        <span class="hide rowValue">0</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>GHS 100</td>
+                    <td>
+                        <input type="text" name="" id="denom" class="100" style="width:30%;">
+                    </td>
+                    <td class="rt">
+                        <span>0.00</span>
+                        <span class="hide rowValue">0</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>GHS 50</td>
+                    <td>
+                        <input type="text" name="" id="denom" class="50" style="width:30%;">
+                    </td>
+                    <td class="rt">
+                        <span>0.00</span>
+                        <span class="hide rowValue">0</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>GHS 20</td>
+                    <td>
+                        <input type="text" name="" id="denom" class="20" style="width:30%;">
+                    </td>
+                    <td class="rt">
+                        <span>0.00</span>
+                        <span class="hide rowValue">0</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>GHS 10</td>
+                    <td>
+                        <input type="text" name="deno" id="denom" class="10" style="width:30%;">
+                    </td>
+                    <td class="rt">
+                        <span>0.00</span>
+                        <span class="hide rowValue">0</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>GHS 5</td>
+                    <td>
+                        <input type="text" name="" id="denom" class="5" style="width:30%;">
+                    </td>
+                    <td class="rt">
+                        <span>0.00</span>
+                        <span class="hide rowValue">0</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>GHS 2</td>
+                    <td>
+                        <input type="text" name="" id="denom" class="2" style="width:30%;">
+                    </td>
+                    <td class="rt">
+                        <span>0.00</span>
+                        <span class="hide rowValue">0</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>GHS 1</td>
+                    <td>
+                        <input type="text" name="" id="denom" class="1" style="width:30%;">
+                    </td>
+                    <td class="rt">
+                        <span>0.00</span>
+                        <span class="hide rowValue">0</span>
+                    </td>
+                </tr>
+                <tr class="bold-text">
+                    <td>Total Notes</td>
+                    <td></td>
+                    <td class="rt">
+                        <span class="noteTotal1">0.00</span>
+                        <span class="noteTotal2 hide">0</span>
+                    </td>
+                </tr>
+              </table>
+           </div>
+        </div>
+        <div class="col-md-6">
+            <span>Coins</span>
+            <div class="border pd">
+               <table class="table">
+                 <tr>
+                    <th>Coin</th>
+                    <th>Qty</th>
+                    <th class="rt">Value</th>
+                 </tr>
+                 <tr>
+                     <td>2</td>
+                     <td>
+                         <input type="text" name="" id="denom" class="2000" style="width:30%;">
+                     </td>
+                     <td class="rt">
+                         <span>0.00</span>
+                         <span class="hide conValue">0</span>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>1</td>
+                     <td>
+                         <input type="text" name="" id="denom" class="1000" style="width:30%;">
+                     </td>
+                     <td class="rt">
+                         <span>0.00</span>
+                         <span class="hide conValue">0</span>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>0.50p</td>
+                     <td>
+                         <input type="text" name="" id="denom" class="0.50" style="width:30%;">
+                     </td>
+                     <td class="rt">
+                         <span>0.00</span>
+                         <span class="hide conValue">0</span>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>0.20p</td>
+                     <td>
+                         <input type="text" name="" id="denom" class="0.20" style="width:30%;">
+                     </td>
+                     <td class="rt">
+                         <span>0.00</span>
+                         <span class="hide conValue">0</span>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>0.10p</td>
+                     <td>
+                         <input type="text" name="" id="denom" class="0.10" style="width:30%;">
+                     </td>
+                     <td class="rt">
+                         <span>0.00</span>
+                         <span class="hide conValue">0</span>
+                     </td>
+                 </tr>
+                 <tr class="bold-text">
+                    <td>Total Coins</td>
+                    <td></td>
+                    <td class="rt">
+                        <span class="totalCoin1">0.00</span>
+                        <span class="hide totalCoin2">0</span>
+                    </td>
+                </tr>
+               </table>
+            </div> 
+            <div class="border pd">
+                <span>summary</span>
+                <table class="table">
+                    <tr class="bold-text">
+                        <td>Total Notes & Conis</td>
+                        <td class="rt"><span class="notesCoins1">0.00</span>
+                         <span class="hide notesCoins2">0</span>
+                        </td>
+                    </tr>
+                    <tr class="bold-text">
+                        <td>MoMo Balance</td>
+                        <td class="rt"><input type="text" name="" id="momo" class="" value="0.00" style="width:40%;"></td>
+                    </tr>
+                    <tr class="bold-text">
+                        <td>total Cheques</td>
+                        <td class="rt"><input type="text" name="" id="cheques" value="0.00" class="" style="width:40%;"></td>
+                    </tr>
+                    <tr class="bold-text">
+                        <td>Total Pledges</td>
+                        <td class="rt"><input type="text" name="" id="pleges" class="" value="0.00" style="width:40%;"></td>
+                    </tr>
+                    <tr class="bold-text">
+                        <td>Grand Total</td>
+                        <td class="rt"><span class="grandTotal1">0.00</span> 
+                         </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+     </div>
+   </div>
+    <script type="module" src="./js/calc.js"></script>
+</body>
+</html>

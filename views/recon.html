@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery.js"></script>
+    <title>Create bank reconciliation</title>
+</head>
+<body>
+   <div class="container">
+    <div class="row">
+        <div class="col-md-8 wrapper">
+                
+                  <div class="border pd">
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Cash Book</label>
+                        <div class="col-sm-9">
+                          <select name="" id="cb" class="form-control">
+                            <option value="1">Transactional</option>
+                            <option value="0">Non Transactional</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="row form-group">
+                             <label class="col-form-label col-md-3 col-sm-3 label-align" for="date">Name <span class="required">*</span>:
+                            </label>
+                           <div class="col-md-9 col-sm-9 ">
+                         <input type="text" id="name" name="name" class="form-control" required>
+                           </div>
+                       </div>
+                     <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                Cashbook Balance
+                            </th>
+                            <th class="rt">
+                                <span id="bookBal">{{$bankBal}}</span>
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                     </table>
+                  </div>
+                  <br>
+                  <span>Add:</span>
+                  <div class="border pd">
+                      <table class="table">
+                        <thead>
+                           <tr>
+                                <th>Details</th>
+                                <th>Amount</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <th><input type="text" name="" id="addDetail" class="form-control"></th>
+                                <th><input type="text" name="" id="addAmt" class="form-control"></th>
+                                <th><a href="" class="btn btn-sm addBtn"><i class="fa fa-plus"></i></a></th>
+                            </tr>
+        
+                        </thead>
+                        <tbody class="add">
+        
+                        </tbody>
+                        <tfooter class="addSum">
+                            <tr>
+                                <td></td>
+                                <td class="rt addSummation">{{$bankBal}}</td>
+                                <td></td>
+                            </tr>
+                        </tfooter>
+                      </table>
+                  </div><br>
+                  <span>Less:</span>
+                  <div class="border pd">
+                      <table class="table">
+                        <thead>
+                           <tr>
+                                <th>Details</th>
+                                <th>Amount</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <th><input type="text" name="subDetail" id="subDetail" class="form-control"></th>
+                                <th><input type="text" name="subAmt" id="subAmt" class="form-control"></th>
+                                <th><a href="" class="btn btn-sm subBtn"><i class="fa fa-plus"></i></a></th>
+                            </tr>
+        
+                        </thead>
+                        <tbody class="sub">
+        
+                        </tbody>
+                        <tfooter class="addSum">
+                            <tr style="font-weight:bold;">
+                                <td>Balance as per Bank Statement</td>
+                                <td class="rt finalSum">{{$bankBal}}</td>
+                                <td></td>
+                            </tr>
+                        </tfooter>
+                      </table> 
+                  </div> 
+            <hr>
+            <div class="clearfix">
+               <button class="btn btn-sm btn-secondary pull-right" id="recordRecon">Record</button>
+             </div>
+             <br>
+        </div>
+    </div>
+   </div>
+<script type="module" src="./js/recon.js"></script>    
+</body>
+</html>

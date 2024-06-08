@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery.js"></script>
+    <title>Create A new Cash Book</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row wrapper">
+           <div class="col-md-12">
+            <h5 class="text-center text-muted">Create new cash book by following these simple steps!</h5>
+            <p class="text-center text-muted">
+                follow the outline steps below to create a new cashbook. please make sure you provide all relevant data!
+            </p>
+            <div class="stepsWrapper bordered">
+                <ul class="listSteps">
+                    <li class="step text-success" id="firstStep">
+                      <div class="">
+                        <span>step</span><br>
+                        <span class="stepNum">1</span>
+                      </div>
+                      <p>Budget Details</p>
+                    </li>
+                    <li class="step" id="secondStep">
+                      <div>
+                      <span>step</span><br>
+                        <span class="stepNum">2</span>
+                      </div>
+                      <p>Add Receipt Items</p>
+                    </li>
+                    <li class="step" id="thirdStep">
+                      <div>
+                      <span>step</span><br>
+                        <span class="stepNum">3</span>
+                      </div>
+                      <p>Add Payment Items</p>
+                    </li>
+                    <li class="step" id="fourthStep">
+                      <div>
+                      <span>step</span><br>
+                        <span class="stepNum">4</span>
+                      </div>
+                      <p>Cashbook receipt column</p>
+                    </li>
+                    <li class="step" id="fithStep">
+                      <div>
+                      <span>step</span><br>
+                        <span class="stepNum">5</span>
+                      </div>
+                      <p>CashBook payment column</p>
+                    </li>
+                    <li class="step" id="sixthStep">
+                      <div>
+                      <span>step</span><br>
+                        <span class="stepNum">6</span>
+                      </div>
+                      <p>Finish Cashbook Opening</p>
+                    </li>
+                </ul>
+            </div>
+           <hr>
+           </div>
+           
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="formContainer">
+                  <div class="budgetDetails">
+                    <p>input cashbook by specifying the name and the period for the cashbook</p>
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Cash Book Name</label>
+                        <div class="col-sm-8">
+                            <input type="text" id="name" class="form-control" placeholder="enter cashbook name name" required>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Start Date</label>
+                        <div class="col-sm-8">
+                            <input type="date" name="" id="from" class="form-control">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">End Date</label>
+                        <div class="col-sm-8">
+                            <input type="date" name="" id="to" class="form-control">
+                        </div>
+                      </div>
+
+                    <hr>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn-sm btn-secondary" disabled>Previous</button>
+                        <button class="btn-sm btn-secondary" id="firstStepb">Next </button>
+                    </div>
+                  </div>
+                  
+                </div>
+            </div>
+           </div>
+    </div>
+    
+  <script type="module" src="js/cashbook.js"></script>  
+</body>
+</html>

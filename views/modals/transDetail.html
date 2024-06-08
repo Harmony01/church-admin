@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/jquery.js"></script>
+    <title>Tranaction Details</title>
+    <style>
+        body{
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row wrapper">
+        <div class="col-md-12">
+            <span>Transaction Details</span>
+            <div class="border pd">
+                <div class="row form-group">
+                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="date">Date:
+                    </label>
+                   <div class="col-md-6 col-sm-6 ">
+                     <input type="date" name="" id="date" class="form-control">
+                   </div>
+                </div>
+                <div class="row form-group">
+                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="date">Details:
+                    </label>
+                   <div class="col-md-6 col-sm-6 ">
+                     <input type="text" name="" id="details" class="form-control">
+                   </div>
+                </div>
+                <div class="row form-group">
+                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="date">Event No:
+                    </label>
+                   <div class="col-md-6 col-sm-6 ">
+                     <input type="text" name="" id="event_no" class="form-control" disabled>
+                   </div>
+                </div>
+                <div class="row form-group">
+                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="date">Ref No:
+                    </label>
+                   <div class="col-md-6 col-sm-6 ">
+                     <input type="text" name="" id="ref_no" class="form-control">
+                   </div>
+                </div>
+                <div class="row form-group">
+                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="date">Cash:
+                    </label>
+                   <div class="col-md-6 col-sm-6 ">
+                     <input type="text" name="" id="cash" class="form-control" disabled>
+                   </div>
+                </div>
+                <div class="row form-group">
+                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="date">Bank:
+                    </label>
+                   <div class="col-md-6 col-sm-6 ">
+                     <input type="text" name="" id="bank" class="form-control" disabled>
+                   </div>
+                </div>
+            </div>
+
+            <hr>
+         <div class="clearfix">
+            <button class="btn btn-sm btn-secondary pull-right" id="updateTr">Update</button>
+        </div>
+        </div>
+
+        
+    </div>
+  </div>
+ <script type="module" src="../js/transaction.js"></script>   
+</body>
+</html>

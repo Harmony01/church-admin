@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery.js"></script>
+    <title>Extract blances</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row wrapper">
+             <div class="col-md-6">
+                <span>transaction details</span>
+                  <div class="border pd">
+                       <div class="row form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="date">Date <span class="required">*</span>:
+                      </label>
+                     <div class="col-md-6 col-sm-6 ">
+                       <input type="date" name="date" id="date" class="form-control">
+                     </div>
+                       </div>
+                       <div class="row form-group">
+                           <label class="col-form-label col-md-3 col-sm-3 label-align" for="date">Amount <span class="required">*</span>:
+                           </label>
+                          <div class="col-md-6 col-sm-6 input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">GH¢</span>
+                             </div>
+                             <input type="text" class="form-control" id="amount" name="amount" required>
+                          </div>
+                       </div>
+                       <div class="row form-group">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="date">Description <span class="required">*</span>:
+                        </label>
+                       <div class="col-md-6 col-sm-6 ">
+                         <input type="text" id="details" name="details" class="form-control" required>
+                       </div>
+                       </div>
+                       <div class="row form-group">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="date">Cheq/Recept. No <span class="required">*</span>:
+                        </label>
+                      <div class="col-md-6 col-sm-6 ">
+                         <input type="tel" name="ref_no" id="ref_no" class="form-control">
+                       </div>
+                       </div>
+                 </div>
+             </div>
+             <div class="col-md-6">
+                <span>debit account</span>
+                <div class="border pd">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Search Acc #.</th>
+                                <th>Find Account</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text" name="" id="searchAc" class="form-control"></td>
+                                <td>
+                                    <select name="debit" id="findAc" class="form-control">
+                                        <option value="0">--please find--</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>  
+                </div><br>
+                <span>credit account</span>
+                <div class="border pd">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Search Acc #.</th>
+                                <th>Find Account</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text" name="" id="searchAc2" class="form-control"></td>
+                                <td>
+                                    <select name="credit" id="findAc2" class="form-control">
+                                    <option value="0">--please find--</option>
+                                        @foreach($acc as $accs)
+                                        <option value="{{$accs->id}}">{{$accs->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+             </div>
+        </div>
+        <hr>
+        <div class="clearfix">
+            <button class="btn btn-sm btn-secondary pull-right" id="recordExt">Record</button>
+        </div> 
+        <br><br>
+    </div>    
+  <script type="module" src="./js/extractBalance.js"></script>  
+</body>
+</html>

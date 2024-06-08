@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery.js"></script>
+    <title>Record new Expenses</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row wrapper">
+           <div class="col-md-6 ">
+            <span>Pay details</span>
+             <div class="paydetails border pd">
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">Date:</label>
+                    <div class="col-sm-8">
+                        <input type="date" id="date" name="" required="required" class="form-control">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">Receive in</label>
+                    <div class="col-sm-8">
+                        <select name="" id="payWith" class="form-control">
+                             <option value="2">Cash</option>
+                             <option value="3">Bank</option>
+                        </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">Balance</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="bal" name="" required="required" class="form-control" disabled>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">Amount</label>
+                    <div class="col-sm-8 input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">GH¢</span>
+                         </div>
+                         <input type="text" class="form-control" id="amount">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">Description</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="details" name="" required="required" class="form-control">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">cheque/rec.No</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="ref_no" name="" required="required" class="form-control">
+                    </div>
+                  </div>
+             </div>
+             <br>
+             <span>Expenses type:</span>
+             <div class="credit-local border pd">
+                <table class="table">
+                    <tr>
+                    <th>Account</th>
+                    <th>Amount</th>
+                    <th></th>
+                    </tr>
+                    <tr>
+                        <td>
+                        <select name="" id="accType" class="form-control">
+                        <option value="0">--Please select---</option>
+                           
+                        </select> 
+                        </td>
+                        <td>
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">GH¢</span>
+                             </div>
+                             <input type="text" class="form-control" id="amtLC2">
+                           </div>
+                        </td>
+                        <td>
+                           <a href="#" class="btn btn-secondary" id="addnewLc"><i class="fa fa-plus"></i></a>
+                        </td>
+                    </tr>
+                    <tbody class="tbodyLc">
+
+                    </tbody>
+                </table>
+           
+             </div>
+             <br>
+             <span>Accounts to be debited with expenses:</span>
+             <div class="other-account border pd">
+                <table class="table">
+                       <tr>
+                             <th>
+                                 <select name="" id="debitAcc" class="form-control">
+                                    <option value="0">--Please select--</option>
+                                      @foreach($payWith as $debit)
+                                      @if($debit->name=='Cash' || $debit->name=='Bank' || $debit->accountClass==0 || $debit->name=='Local Account')
+                                      @else
+                                    <option value="{{$debit->Account_id}}">{{$debit->name}}</option>
+                                     @endif
+                                     @endforeach
+                                    </select> 
+                             </th>
+                             <th>
+                               <div class="input-group">
+                                  <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">GH¢</span>
+                                  </div>
+                                    <input type="text" class="form-control" id="amount2">
+                                  </div>
+                             </th>
+                             <th>
+                                 <a href="#" class="btn btn-secondary" id="addnewAcc"><i class="fa fa-plus"></i></a>
+                             </th>
+                           </tr>
+                       <tbody class="tbody2">
+                          
+                       </tbody>
+                 </table>
+             </div>
+           </div>
+           <div class="col-md-6">
+            <span class="text-center">Analytical table</span>
+              <div class="analytical-table border pd">
+                     <table class="table">
+                       <tbody class="cashAnalytics">
+                        
+                       </tbody>
+                       <tfoot>
+                        <tr>
+                          <td>Total</td>
+                          <td style="text-align:right;font-weight:bold;" class="">
+                            <span class="analysFianalTotal">0.00</span> 
+                            <span class="checkTotal hide"></span>
+                          </td>
+                        </tr>
+                       </tfoot>
+                     </table>
+                     <hr>
+              </div>
+           </div>
+           <div class="col-md-12">
+            <hr>
+           <div class="clearfix">
+               <button class="btn btn-sm btn-secondary pull-right" id="recordRev">Record</button>
+           </div>
+           </div>
+        </div>
+    </div>
+ 
+    <script type="module" src="./js/expense.js"></script>
+</body>
+</html>

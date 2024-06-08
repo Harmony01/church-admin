@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/jquery.js"></script>
+    <title>view/edit cashbook</title>
+    <style>
+        .fullWidth{
+            width: 100%;
+            padding: 3px;
+        }
+
+        .deletedReceipt tr .delName, .deletedPayment tr .delName{
+            text-decoration: line-through;
+            font-style: italic;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row wrapper">
+           <div class="col-md-12">
+            <div class="clearfix">
+                <button class="btn btn-secondary btn-sm pull-right" id="clearDisabled">Edit Cashbook</button>
+            </div>
+            <hr>
+            <div class="row form-group">
+                <label class="col-form-label col-md-3 col-sm-3 label-align" for="date">Change Status
+                </label>
+               <div class="col-md-6 col-sm-6 ">
+                 <select name="status" id="status" class="editInput fullWidth" disabled>
+                      
+                 </select>
+               </div>
+            </div>
+            <input type="hidden" name="" id="cbId">
+            <hr>
+            <span>cashbook info</span>
+             <div class="border pd">
+              <div class="row form-group">
+                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="date">Cashbook Name:
+                    </label>
+                   <div class="col-md-8 col-sm-8 ">
+                     <input type="text" id="name" name="details" class="editInput fullWidth" disabled>
+                   </div>
+              </div>
+              <div class="row form-group">
+                  <label class="col-form-label col-md-3 col-sm-3 label-align" for="date">From:
+                  </label>
+                  <div class="col-md-8 col-sm-8 ">
+                      <input type="date" id="from" name="" class="editInput" disabled size="4">
+                  </div>
+              </div>
+              <div class="row form-group">
+                <label class="col-form-label col-md-3 col-sm-3 label-align" for="date">to:
+                </label>
+                <div class="col-md-8 col-sm-8 ">
+                    <input type="date" id="to" name="" class="editInput" disabled size="4">
+                </div>
+            </div>
+             </div>
+             <br>
+             <span>Cashbook receipt headings</span>
+             <div class="border pd">
+              <table class="table">
+                <tr>
+                    <th>receipt Header</th>
+                    <th></th>
+                </tr>
+                <tbody class="receiptItem">
+
+                </tbody>
+                <tbody class="addedReceipt">
+
+                </tbody>
+                <tbody class="deletedReceipt">
+                
+                </tbody>
+              </table>
+              <br>
+              <span>Add more receipt item</span>
+              <table class="table">
+                <tr>
+                    <td>
+                        <select name="" id="receipts" class="fullWidth editInput" disabled>
+                            <option value="">---please select---</option>
+                        </select>
+                    </td>
+                    <td><button class="btn btn-sm editInput" id="addRev" disabled><i class="fa fa-plus"></i></button></th>
+                </tr>
+              </table>
+             </div><br>
+             <span>Cashbook payments headings</span>
+             <div class="border pd">
+              <table class="table">
+                <tr>
+                    <th>Payment Header</th>
+                    <th></th>
+                </tr>
+                <tbody class="paymentItem">
+
+                </tbody>
+                <tbody class="addedPayment">
+
+                </tbody>
+                <tbody class="deletedPayment">
+
+                </tbody>
+              </table>
+              <span>Add more payment items</span>
+              <table class="table">
+                <tr>
+                    <td>
+                        <select name="" id="payments" class="fullWidth editInput" disabled>
+                            <option value="">---please select---</option>
+                        </select>
+                    </td>
+                    <td><button class="btn btn-sm editInput" id="addPay" disabled><i class="fa fa-plus"></i></button></th>
+                </tr>
+              </table>
+             </div><br>
+             </div>
+           </div>
+           <hr>
+           <div class="clearfix">
+              <button class="btn btn-sm btn-secondary pull-right editInput" id="updateCb" disabled>update</button>
+          </div>
+          <br>
+        </div>
+    </div>
+   <script type="module" src="../js/editcashbook.js"></script> 
+</body>
+</html>

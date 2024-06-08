@@ -464,6 +464,7 @@ ipcMain.on('query-account',()=>{
   })
 })
 
+
 ipcMain.on('get-account-transaction',(e,data)=>{
   if (data.accountNo=='') {
     notifyMe.warningMessage(BrowserWindow.getFocusedWindow(),'data warning','please search account number!')

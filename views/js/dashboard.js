@@ -1,7 +1,8 @@
 import { createTopNav, createFooter } from "./modules/pageTemplate.js";
+import { baseDeveloper } from "./modules/script.js";
 //creating page templates
-createTopNav()
-createFooter()
+//createTopNav()
+//createFooter()
 
 $('.menuItems').each(function(index,element){
     $(element).click(function(){
@@ -12,7 +13,13 @@ $('.menuItems').each(function(index,element){
 
 $('#logoutBtn').on('click',function(e){
     e.preventDefault();
-    window.dashboard.logout('logout us out from system')
+    if (confirm('do you confirm logout?')) {
+      baseDeveloper.eventLoader($('#logoutBtn'));
+      window.dashboard.logout('logout us out from system')
+    }else{
+
+    }
+   
 })
 
 window.dashboard.loginUser((_event,data)=>{

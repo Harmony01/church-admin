@@ -17,7 +17,7 @@ const Api = ()=>{
    })
    */
   try {
-   const data = fs.readFileSync('./api/auth/file.txt') 
+   const data = fs.readFileSync('C:\\wamp64\\auth\\file.txt') 
    //console.log(data.toString())
    token = data.toString();
   } catch (error) {

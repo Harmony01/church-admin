@@ -15,3 +15,7 @@ formData={'email':email, 'password':password}
 window.loginBridge.errorMessage((e,d)=>{
  baseDeveloper.cancelLoader($('#loginBtn'),'Login')
 })
+
+$('#stopBtn').on('click',()=>{
+    window.loginBridge.stopLogin()
+})

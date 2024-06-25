@@ -38,9 +38,9 @@ ipcMain.on('loginResponse', (event, loginData)=> {
       }else{
         
         //save token
-        fs.writeFile('./api/auth/file.txt',response.data.token, ()=>{
+        fs.writeFile('C:\\wamp64\\auth\\file.txt',response.data.token, ()=>{
         })
-        fs.writeFile('./api/auth/webFile.txt',response.data.webtoken, ()=>{
+        fs.writeFile('C:\\wamp64\\auth\\webFile.txt',response.data.webtoken, ()=>{
         })
      //create a login success dialogue
      notifyMe.inforMessage(loginWin,'Login Successful','You have successfuly login!')        
@@ -61,6 +61,12 @@ ipcMain.on('loginResponse', (event, loginData)=> {
   } 
 })
 ///handle login logic ends here
+
+//stoplogin
+ipcMain.on('stop-login',(e,d)=>{
+  app.quit();
+})
+//stoplogin
 
 //handle logout logic 
 ipcMain.on('logout', (evant, data)=>{
@@ -86,12 +92,15 @@ ipcMain.on('post-account', (event, data)=>{
   if (data.name=='' || data.legend=="" || data.accountType_id==0) {
     
     notifyMe.errorMessage(BrowserWindow.getFocusedWindow(), 'Error Message','Provide all relevant data!');
+    event.reply('err','error has ocured')
   }else{
    accountsApi.newAccount(data).then((response)=>{
     notifyMe.inforMessage(BrowserWindow.getFocusedWindow(),'Event Success','Data recorded successfuly!')
+    event.reply('suc','operation successful')
     //console.log(response.data)
    }).catch((err)=>{
     console.log(err.response.data)
+    event.reply('err','error has ocured')
    })
   }
   
@@ -210,16 +219,20 @@ ipcMain.on('new-revenue-command', (event, data)=>{
 ipcMain.on('revenue-data', (e,data)=>{
   if (data.data=='' || data.amount=='' || data.details=='') {
     notifyMe.errorMessage(BrowserWindow.getFocusedWindow(),'data error','please input all relevant data')
+    e.reply('errRev')
   }else if (data.lamnt=='' && data.amt.length=='') {
     notifyMe.errorMessage(BrowserWindow.getFocusedWindow(),'data error','atleat one revenue item must be credited')
+    e.reply('errRev')
   }else if (Number(data.checkTotal) != Number(data.amount)) {
     notifyMe.warningMessage(BrowserWindow.getFocusedWindow(),'data inconsistency','amount should be equal sum of individual revenue!')
+    e.reply('errRev')
   }else{
     revenueApi.postRevenue(data).then((res)=>{
       notifyMe.inforMessage(BrowserWindow.getFocusedWindow(),'input success','revenue recorded successfuly!')
      e.reply('revenue-recorded', res.data);
     }).catch((err)=>{
       console.log(err.response.data)
+      e.reply('errRev')
     })
   }
 })
@@ -251,8 +264,10 @@ ipcMain.on('fetch-bal',(e,data)=>{
 ipcMain.on('post-expense', (e,data)=>{
   if (data.data=='' || data.amount=='' || data.details=='') {
     notifyMe.errorMessage(BrowserWindow.getFocusedWindow(),'data error','please input all relevant data')
+    e.reply('errExp')
   }else if (data.lamnt=='' && data.amt.length=='') {
     notifyMe.errorMessage(BrowserWindow.getFocusedWindow(),'data error','atleat one expense item must be debited')
+    e.reply('errExp')
   }else{
     expenseApi.postExpense(data).then((res)=>{
       notifyMe.inforMessage(BrowserWindow.getFocusedWindow(),'input success','Expense recorded successfuly!')
@@ -266,6 +281,7 @@ ipcMain.on('post-expense', (e,data)=>{
 //create contra
 ipcMain.on('contra-command', (e,data)=>{
   appWindows.createContra();
+  e.reply('errExp')
 })
 
 //post contra
@@ -601,10 +617,11 @@ ipcMain.on('print-analysis-finaly', (e,data)=>{
 
 app.whenReady().then(()=>{
   loginWin = new BrowserWindow({
-    height: 500,
+    height: 400,
     width: 600,
     resizable: false,
     alwaysOnTop: false,
+    frame:false,
     icon:'img/icon.png',
     webPreferences:{
       preload: path.join(__dirname, 'preloads/loginPreload.js'),
@@ -617,10 +634,11 @@ app.whenReady().then(()=>{
     app.on('activate', () => {
         if (BrowserWindow.getAllWindows().length === 0) {
           loginWin = new BrowserWindow({
-            height: 500,
+            height: 400,
             width: 600,
             resizable: false,
             alwaysOnTop: false,
+            frame:false,
             icon:'img/icon.png',
             webPreferences:{
               preload: path.join(__dirname, 'preloads/loginPreload.js'),

@@ -4,7 +4,7 @@ let token;
 
 const createWebURL = (url)=>{
     try {
-        const data = fs.readFileSync('./api/auth/webFile.txt') 
+        const data = fs.readFileSync('C:\\wamp64\\auth\\webFile.txt') 
         //console.log(data.toString())
         token = data.toString();
        } catch (error) {

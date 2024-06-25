@@ -1,6 +1,6 @@
 body{
     background-color: #eee;
-    font-size: 0.9em;
+    font-size: 0.8em;
 }
 input, select{
     background-color: transparent !important;
@@ -15,7 +15,7 @@ input:focus, select:focus{
 }
 
 .wrapper{
-    margin-top: 30px;
+    margin-top: 55px;
     margin-bottom: 30px;
 }
 .hide, .hideMe{
@@ -23,7 +23,11 @@ input:focus, select:focus{
 }
 
 .pd{
-    padding:10px;
+    padding:15px;
+    background-color: #fff;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    justify-content: center;
 }
 .rt{
     text-align: right;
@@ -38,9 +42,68 @@ input:focus, select:focus{
   cursor: pointer;
 }
 
+.nav-left{
+    min-height: 100vh;
+    width: 230px;
+    padding: 0;
+    position: absolute;
+    display: flex !important;
+    z-index: 1;
+    background-color: #575555;
+    justify-content: center;
+    
+}
+
+.asideMenu span.fa{
+  float: right;
+  text-align: center;
+  margin-top: 5px;
+  font-size: 10px;
+  min-width: inherit;
+  color: #C4CFDA;
+}
+
+.asideMenu .fa{
+    width: 26px;
+    opacity: .99;
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.asideMenu{
+    margin-bottom: 35px;
+}
+
+.asideMenu > ul{
+    margin-top: 10px;
+    display: block;
+    
+}
+
+.nav.sideMenu > li {
+    position: relative;
+    display: block;
+    border-bottom: 1.5px solid #757373;
+}
+  
+  .nav.sideMenu > li {
+    margin-bottom: 6px; }
+  
+  .nav.sideMenu > li:hover {
+    color: #F2F5F7 !important; }
+  
+  .nav.sideMenu > li:hover, .nav > li:focus {
+    background: transparent; }
+
 .sideMenu{
     list-style-type: none;
-    padding-left: 0 !important;
+    padding: 10px;
+    color: #C4CFDA;
+    min-width: 100%;
     
 }
 
@@ -48,6 +111,7 @@ input:focus, select:focus{
     font-size: 0.9em;
     cursor: pointer;
     padding-top: 10px;
+   
 } 
 
 .sideMenu li .menuItems{
@@ -60,19 +124,26 @@ input:focus, select:focus{
     list-style-type: none;
     display: none;
 }
-
+/*
 .asideMenu{
-    position: fixed;
+    position:fixed;
     height: 100%;
     justify-content: center;
    overflow-y: scroll;
    padding: 20px;
-   
 }
-
+*/
 .topContainer{
     color:#fff;
     background-color:gray; 
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top:0;
+}
+
+.nav-content{
+    margin-left: 200px;
 }
 
 .topContainer .topNav{
@@ -85,8 +156,8 @@ input:focus, select:focus{
 footer{
     position: absolute;
     bottom:0;
-    left: 20%;
     font-size:0.8em;
+    min-width: 100%;
 }
 
 .listSteps{
@@ -163,3 +234,100 @@ label{
     width: 100%;
     background-color: #eee;
 }
+
+.login-inputs{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-inputs input{
+    width: 80%;
+    border: 1px solid #777;
+    border-radius: 5px;
+}
+
+.login-item span i{
+    font-size: 1.3em;
+    color: #777;
+}
+.login-item .btn{
+    font-size: 12px !important;
+}
+
+.login-img{
+    width: 100%;
+}
+
+.right-col{
+    margin-left: 230px;
+    margin-top: 100px;
+}
+
+.page-content{
+    min-height: 100%;
+}
+.page-header{
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.page-header img{
+    max-width: 25px;
+    max-height: 25px;
+}
+.page-item{
+    text-align: center;
+    margin-bottom: 20px;
+    border: 1px solid #777;
+    border-radius: 5px;
+    width: 100px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.page-item .icon-holder{
+    font-size: 2em;
+}
+.fixed-aside{
+    position: fixed;
+    min-height: 100vh;
+    border: 1px solid #757373;
+    width: 230px;
+    right: 20px;
+    margin-top: 0;
+    overflow-y: scroll;
+    background-color: #575555;
+}
+
+
+.sticky-aside{
+    position: fixed;
+    right: 0;
+    overflow-y: scroll;
+    height: 100%;
+    z-index: 1;
+}
+.mainMenu{
+    background-color: #eee !important;
+    color: #575555 !important;
+}
+
+.mainMenu .menuIist{
+    z-index: 1;
+    margin-left: 230px;
+    list-style-type: none;
+    display: flex;
+    gap: 3em;
+    font-size:1em;
+}
+.mainMenu .menuIist .nav-item .nav-link{
+    color: #575555;
+}
+
+.mainMenu .menuIist .nav-item .nav-link.active{
+   background-color: grey;
+   color: #fff;
+}
+

@@ -1,6 +1,6 @@
 const topNav = `
 <div class="container-fluid">
-    <div class="row">
+    <div class="row nav-content">
         <div class="col-md-12">
             <div class="topNav">
                 <ul class="topnavs">

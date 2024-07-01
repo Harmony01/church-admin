@@ -15,7 +15,7 @@
     <div class="mainMenu">
         <ul class="menuIist nav nav-tabs" id="myTab" role="tablist">
               <li class="nav-item">
-                <a class="nav-link active" id="finance" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Finance</a>
+                <a class="nav-link active" id="finance-tab" data-toggle="tab" href="#finance" role="tab" aria-controls="finance" aria-selected="true">Finance</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" id="profile-tab" data-toggle="tab" href="#admin" role="tab" aria-controls="admin" aria-selected="false">Administration</a>
@@ -47,153 +47,207 @@
             </div>
         </div>
       </div>
-</div>  
-<div class="container-fluid">
-  <div class="row">
-       <div class="col-md-3 nav-left">
-          <div class="asideMenu">
-            <ul class="nav sideMenu">
-                <li class="topmenu">
-                   <div class="menuItems">
-                      <span><i class="fa fa-list"></i> Manage Cashbook</span><span class="fa fa-sort-down"></span>
-                   </div>
-                   <ul class="submenu">
-                    <li class="downmenu" id="newCashBook">New CashBook</li>
-                    <li class="downmenu" id="viewCashBook">view CashBooks</li>
-                    <li class="downmenu" id="activeCashBook">open active CashBooks</li>
-                </ul>
-                </li>
-                <li class="topmenu">
-                    <div class="menuItems">
-                       <span><i class="fa fa-folder-o"></i> Manage Accounts</span><span class="fa fa-sort-down"></span>
-                    </div>
-                    <ul class="submenu">
-                     <li class="downmenu" id="createAcc">Create Account</li>
-                     <li class="downmenu" id="queryAcc">account History Enquiry</li>
-                 </ul>
-                 </li>
-                <li class="topmenu">
-                  <div class="menuItems">
-                      <span><i class="fa fa-shopping-cart"></i> Transactions</span><span class="fa fa-sort-down"></span>
-                  </div>
-                  <ul class="submenu">
-                      <li class="downmenu" id="createRev">Record Revenue</li>
-                      <li class="downmenu" id="createExp">Record Expenses</li>
-                      <li class="downmenu" id="createContra">Contra Entry</li>
-                      <li class="downmenu" id="createDaily">New Daily Analysis</li>
-                      <li class="downmenu" id="updateEnt">update entries</li>
-                  </ul>
-                </li>
-                <li class="topmenu">
-                    <div class="menuItems">
-                        <span><i class="fa fa-group"></i> Pledges/Payments</span><span class="fa fa-sort-down"></span>
-                    </div>
-                    <ul class="submenu">
-                        <li class="" id="createPledge">create pledge/payment</li>
-                        <li class="" id="viewPledge">view pledge</li>
-                    </ul>
-                  </li>
-              <li class="topmenu">
-                <div class="menuItems">
-                    <span><i class="fa fa-support"></i> Etries Support</span><span class="fa fa-sort-down"></span>
-                </div>
-                <ul class="submenu">
-                    <li class="downmenu" id="extractBal">extract Balances</li>
-                    <li class="downmenu" id="createExp">entries reversal</li>
-                </ul>
-              </li>
-              <li class="topmenu">
-                <div class="menuItems">
-                    <span><i class="fa fa-book"></i> Reports</span><span class="fa fa-sort-down"></span>
-                </div>
-                <ul class="submenu">
-                    <li class="downmenu" id="createRecon">Reconciliation</li>
-                    <li class="downmenu" id="cbReport">Cashbook report</li>
-                    <li class="downmenu" id="printDaily">Print Daily Analysis</li>
-                </ul>
-              </li>
-              </ul>
-          </div>
-       </div> 
-       <div class="col-md-9 right-col">
-        <div class="page-content">
-           <div class="row">
-            <div class="col-md-9">
-                <div class="page-header">
-                    <span><img src="../img/icon1.png" alt="" class="img-fluid"></span>
-                    <span><h6>The church of Pentecost, Zion Assembly</h6></span>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-md-3 col-6">
-                        <div class="page-item">
-                            <span class="icon-holder">
-                                <i class="fa fa-bars"></i>
-                            </span><br>
-                            <span>Create New Cashbook</span>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6">
-                        <div class="page-item">
-                            <span class="icon-holder">
-                                <i class="fa fa-outdent"></i>
-                            </span><br>
-                            <span>view active Cashbook</span>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6">
-                        <div class="page-item">
-                            <span class="icon-holder">
-                                <i class="fa fa-search"></i>
-                            </span><br>
-                            <span>Account enquiry</span>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6">
-                        <div class="page-item">
-                            <span class="icon-holder">
-                                <i class="fa fa-print"></i>
-                            </span><br>
-                            <span>Print Daily Analysis</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">  
-                    <div class="col-md-3 col-6">
-                        <div class="page-item">
-                            <span class="icon-holder">
-                                <i class="fa fa-line-chart"></i>
-                            </span><br>
-                            <span>Prepary daily analysis</span>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6">
-                        <div class="page-item">
-                            <span class="icon-holder">
-                                <i class="fa fa-edit"></i>
-                            </span><br>
-                            <span>Bank Reconciliation</span>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6">
-                        <div class="page-item">
-                            <span class="icon-holder">
-                                <i class="fa fa-dollar"></i>
-                            </span><br>
-                            <span>Deposit and Withdrawal</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
+</div> 
 
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane show active" id="finance" role="tabpanel" aria-labelledby="home-tab">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3 nav-left">
+                    <div class="asideMenu">
+                    <ul class="nav sideMenu">
+                        <li class="topmenu">
+                            <div class="menuItems">
+                                <span><i class="fa fa-list"></i> Manage Cashbook</span><span class="fa fa-sort-down"></span>
+                            </div>
+                            <ul class="submenu">
+                            <li class="downmenu" id="newCashBook">New CashBook</li>
+                            <li class="downmenu" id="viewCashBook">view CashBooks</li>
+                            <li class="downmenu" id="activeCashBook">open active CashBooks</li>
+                        </ul>
+                        </li>
+                        <li class="topmenu">
+                            <div class="menuItems">
+                                <span><i class="fa fa-folder-o"></i> Manage Accounts</span><span class="fa fa-sort-down"></span>
+                            </div>
+                            <ul class="submenu">
+                            <li class="downmenu" id="createAcc">Create Account</li>
+                            <li class="downmenu" id="queryAcc">account History Enquiry</li>
+                        </ul>
+                        </li>
+                        <li class="topmenu">
+                            <div class="menuItems">
+                                <span><i class="fa fa-shopping-cart"></i> Transactions</span><span class="fa fa-sort-down"></span>
+                            </div>
+                            <ul class="submenu">
+                                <li class="downmenu" id="createRev">Record Revenue</li>
+                                <li class="downmenu" id="createExp">Record Expenses</li>
+                                <li class="downmenu" id="createContra">Contra Entry</li>
+                                <li class="downmenu" id="createDaily">New Daily Analysis</li>
+                                <li class="downmenu" id="updateEnt">update entries</li>
+                            </ul>
+                        </li>
+                        <li class="topmenu">
+                            <div class="menuItems">
+                                <span><i class="fa fa-group"></i> Pledges/Payments</span><span class="fa fa-sort-down"></span>
+                            </div>
+                            <ul class="submenu">
+                                <li class="" id="createPledge">create pledge/payment</li>
+                                <li class="" id="viewPledge">view pledge</li>
+                            </ul>
+                            </li>
+                        <li class="topmenu">
+                        <div class="menuItems">
+                            <span><i class="fa fa-support"></i> Etries Support</span><span class="fa fa-sort-down"></span>
+                        </div>
+                        <ul class="submenu">
+                            <li class="downmenu" id="extractBal">extract Balances</li>
+                            <li class="downmenu" id="createExp">entries reversal</li>
+                        </ul>
+                        </li>
+                        <li class="topmenu">
+                        <div class="menuItems">
+                            <span><i class="fa fa-book"></i> Reports</span><span class="fa fa-sort-down"></span>
+                        </div>
+                        <ul class="submenu">
+                            <li class="downmenu" id="createRecon">Reconciliation</li>
+                            <li class="downmenu" id="cbReport">Cashbook report</li>
+                            <li class="downmenu" id="printDaily">Print Daily Analysis</li>
+                        </ul>
+                        </li>
+                        </ul>
+                    </div>
+                </div> 
+                <div class="col-md-9 right-col">
+                <div class="page-content">
+                    <div class="row">
+                    <div class="col-md-9">
+                        <div class="page-header">
+                            <span id="brand-logo"><img src="../img/icon1.png" alt="" class="img-fluid"></span>
+                            <span><h6 id="brand-name">The church of Pentecost, Zion Assembly</h6></span>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-3 col-6">
+                                <div class="page-item" id="nCB">
+                                    <span class="icon-holder">
+                                        <i class="fa fa-bars"></i>
+                                    </span><br>
+                                    <span>Create New Cashbook</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="page-item" id="vACB">
+                                    <span class="icon-holder">
+                                        <i class="fa fa-outdent"></i>
+                                    </span><br>
+                                    <span>view active Cashbook</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="page-item" id="aEnq">
+                                    <span class="icon-holder">
+                                        <i class="fa fa-search"></i>
+                                    </span><br>
+                                    <span>Account enquiry</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6" id="pDaily">
+                                <div class="page-item">
+                                    <span class="icon-holder">
+                                        <i class="fa fa-print"></i>
+                                    </span><br>
+                                    <span>Print Daily Analysis</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">  
+                            <div class="col-md-3 col-6" id="dAnal">
+                                <div class="page-item">
+                                    <span class="icon-holder">
+                                        <i class="fa fa-line-chart"></i>
+                                    </span><br>
+                                    <span>Prepary daily analysis</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="page-item" id="bRec">
+                                    <span class="icon-holder">
+                                        <i class="fa fa-edit"></i>
+                                    </span><br>
+                                    <span>Bank Reconciliation</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="page-item" id="Cont">
+                                    <span class="icon-holder">
+                                        <i class="fa fa-dollar"></i>
+                                    </span><br>
+                                    <span>Deposit and Withdrawal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+        
+                    </div>
+                    </div>
+                </div>
+                
+                </div>
             </div>
-           </div>
         </div>
-         
-       </div>
-  </div>
+    </div>
+    <div class="tab-pane" id="users" role="tabpanel" aria-labelledby="user-tab">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3 nav-left">
+                    <div class="asideMenu">
+                    <ul class="nav sideMenu">
+                        <li class="topmenu">
+                            <div class="menuItems">
+                                <span><i class="fa fa-list"></i> Manage Account</span><span class="fa fa-sort-down"></span>
+                            </div>
+                            <ul class="submenu">
+                            <li class="downmenu" id="newCashBook">product activation</li>
+                        </ul>
+                        </li>
+                        <li class="topmenu">
+                            <div class="menuItems">
+                                <span><i class="fa fa-folder-o"></i> User Administration</span><span class="fa fa-sort-down"></span>
+                            </div>
+                            <ul class="submenu">
+                            <li class="downmenu" id="createAcc">Add User</li>
+                            <li class="downmenu" id="queryAcc">account History Enquiry</li>
+                        </ul>
+                        </li>
+                        </ul>
+                    </div>
+                </div> 
+                <div class="col-md-9 right-col">
+                <div class="page-content">
+                    <div class="row">
+                    <div class="col-md-9">
+                        <div class="page-header">
+                            <span id="brand-logo1"><img src="../img/icon1.png" alt="" class="img-fluid"></span>
+                            <span><h6 id="brand-name1">The church of Pentecost, Zion Assembly</h6></span>
+                        </div>
+                        <hr>
+                        <div class="row">
+                           
+                    </div>
+                    <div class="col-md-3">
+        
+                    </div>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 <!--footer-->
 <footer>
     <div class="container">
@@ -201,7 +255,7 @@
             <div class="col-md-12">
                 <hr>
                <div class="text-center">
-                <span>Church Admin softaware. Version 1.0.0</span>
+                <span>Church Admin softaware. Version 1.0.1</span>
                 <span>Developed by Hilside Business consult &copy; 2023</span>
                </div>
             </div>

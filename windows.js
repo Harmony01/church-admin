@@ -16,7 +16,7 @@ const appWindows={
        });
  
        item.loadFile('views/dashboard.html');
-       item.webContents.once('did-finish-load', ()=>{
+       item.webContents.on('did-finish-load', ()=>{
          item.webContents.send('user-details', winData)
          //console.log('dash board window has fired')
        }) 
@@ -215,7 +215,24 @@ const appWindows={
     win.webContents.on('did-finish-load',()=>{
       win.webContents.send(channel, data)
     })
- }
+ },
+
+ loginWindow: ()=>{
+        const logWin =new BrowserWindow({
+          height: 400,
+          width: 600,
+          resizable: false,
+          alwaysOnTop: false,
+          frame:false,
+          icon:'img/icon.png',
+          webPreferences:{
+            preload: path.join(__dirname, 'preloads/loginPreload.js'),
+            contextIsolation: true,
+          }
+        })
+
+        return logWin;
+     }
 
 }
      

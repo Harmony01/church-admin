@@ -235,28 +235,60 @@ label{
     background-color: #eee;
 }
 
-.login-inputs{
-    margin-top: 10px;
+.login-wrapper{
     display: flex;
-    justify-content: space-between;
+}
+.login-inputs{
+   background: #fff;
+   height: 400px;
+   width: 300px;
+   padding-top: 80px;
 }
 
 .login-inputs input{
-    width: 80%;
-    border: 1px solid #777;
-    border-radius: 5px;
+    width: 100%;
+    border-bottom: 1px solid #777 !important;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0 !important;
+    font-size: 13px;
+    font-style: italic;
+}
+.login-item{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    padding-top: 15px;
 }
 
-.login-item span i{
-    font-size: 1.3em;
-    color: #777;
-}
-.login-item .btn{
+.login-btn .btn{
     font-size: 12px !important;
 }
 
+.login-btn{
+    padding: 10px;
+    text-align: center;
+}
+.login-btn p a{
+    color:#575555;
+}
+.mylabel i{
+    font-size: 1.5em;
+    margin-top: 15px;
+}
+
+.mylabel{
+    width: 20px;
+}
+
 .login-img{
-    width: 100%;
+  max-width: 300px;
+  height: 400px;
+}
+
+.login-banner{
+margin: 0 !important;
 }
 
 .right-col{
@@ -312,6 +344,7 @@ label{
 .mainMenu{
     background-color: #eee !important;
     color: #575555 !important;
+    margin-top: 3px;
 }
 
 .mainMenu .menuIist{

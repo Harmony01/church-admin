@@ -4,16 +4,17 @@ const fs = require('fs');
 //const axios = require('axios');
 //const api = require('./api/api');
 //apis
-const {login, logout} = require('./api/auth');
+const {login, logout, getMachine, checkKey} = require('./api/auth');
 const accountsApi =require('./api/accounts');
 const cashBookApi = require('./api/cashBookApi');
 const revenueApi = require('./api/revenueApi');
 const expenseApi = require('./api/expenseApi');
 const pledgeApi = require('./api/pledgeAip');
+const osData = require('./osData');
 //winddows
 const appWindows = require('./windows')
 const notifyMe = require('./notifications/notification')
-const webURL = require('./web/web');
+const {webURL, noToken} = require('./web/web');
 
 
 
@@ -44,7 +45,7 @@ ipcMain.on('loginResponse', (event, loginData)=> {
         })
      //create a login success dialogue
      notifyMe.inforMessage(loginWin,'Login Successful','You have successfuly login!')        
-      appWindows.dashBoardWindow(response.data.user);
+      appWindows.dashBoardWindow([response.data.user, response.data.brn]);
      //close login windown
       loginWin.close();
       }
@@ -67,6 +68,27 @@ ipcMain.on('stop-login',(e,d)=>{
   app.quit();
 })
 //stoplogin
+//check key
+ipcMain.on('check-product-key',(e,d)=>{
+  checkKey(d).then((res)=>{
+   if (res.data.noKey) {
+    notifyMe.warningMessage(BrowserWindow.getFocusedWindow(),'invalid key', 'invalid key provided, Kindly purchase produck key!')
+    e.reply('error','error-occured');
+   }else{
+    notifyMe.inforMessage(BrowserWindow.getFocusedWindow(),'valid key', 'verified as: '+ res.data.brn[0].name+'. Kindly login');
+    e.reply('keyValid');
+   }
+  }).catch((err)=>{
+    console.log(err)
+    e.reply('error','error-occured');
+  })
+})
+//=============================
+
+//buy key
+ipcMain.on('buy-key',(e,d)=>{
+ shell.openExternal(noToken('church-admin/registration'))
+})
 
 //handle logout logic 
 ipcMain.on('logout', (evant, data)=>{
@@ -616,35 +638,24 @@ ipcMain.on('print-analysis-finaly', (e,data)=>{
 //==================================
 
 app.whenReady().then(()=>{
-  loginWin = new BrowserWindow({
-    height: 400,
-    width: 600,
-    resizable: false,
-    alwaysOnTop: false,
-    frame:false,
-    icon:'img/icon.png',
-    webPreferences:{
-      preload: path.join(__dirname, 'preloads/loginPreload.js'),
-      contextIsolation: true,
-    }
-  })
+  loginWin = appWindows.loginWindow()
   
   //loginWin.webContents.openDevTools();
-  loginWin.loadFile('views/login.html');
+  getMachine(osData.deviceName).then((res)=>{
+    if (res.data.noMachine) {
+      loginWin.loadFile('views/newInstallation.html');
+    }else if (res.data.machine) {
+      loginWin.loadFile('views/login.html');
+    }
+     console.log(res.data)
+  }).catch((err)=>{
+    console.log(err)
+  })
+  //console.log(osData.deviceName)
+  
     app.on('activate', () => {
         if (BrowserWindow.getAllWindows().length === 0) {
-          loginWin = new BrowserWindow({
-            height: 400,
-            width: 600,
-            resizable: false,
-            alwaysOnTop: false,
-            frame:false,
-            icon:'img/icon.png',
-            webPreferences:{
-              preload: path.join(__dirname, 'preloads/loginPreload.js'),
-              contextIsolation: true,
-            }
-          })
+          loginWin = appWindows.loginWindow()
           
           //loginWin.webContents.openDevTools();
           loginWin.loadFile('views/login.html');

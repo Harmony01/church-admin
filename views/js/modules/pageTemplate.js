@@ -35,15 +35,34 @@ const footer = `
         </div>
     </footer>
 `
-const createTopNav = ()=>{
-    const topnavHolder = document.getElementById('holdNav');
-    topnavHolder.innerHTML=topNav
-    //console.log(topnavHolder.innerHTML);
-}
+const productKeyPage = `
+          <div class="login-item">
+             <label class="mylabel"><i class="fa fa-key"></i></label> 
+             <div class=""><input type="email" id="productKey" class="form-control" placeholder="enter product key" autofocus></div>
+           </div>
+            <div class="login-btn">
+              <button type="submit" class="btn btn-secondary btn-block" id="enterKey" disabled>Activate Product</button>
+              <p>Don't have product key?<a href="" class="buyKey"> purchase now!</a></p>
+            </div>
+`
 
-const createFooter = ()=>{
-const footerHolder = document.getElementById('footerHolder');
-footerHolder.innerHTML=footer;
-}
+const loginPage = `
+<div class="login-item">
+             <label class="mylabel"><i class="fa fa-envelope"></i></label> 
+             <div class=""><input type="email" id="email" class="form-control" placeholder="email address" autofocus></div>
+           </div>
+           <div class="login-item">
+              <label class="mylabel"><i class="fa fa-lock"></i></label> 
+              <div class="">
+                <input type="password" id="password" class="form-control" placeholder="password">
+              </div>
+            </div>
+            <div class="login-btn">
+              <button type="submit" class="btn btn-secondary btn-block" id="loginBtn">Login</button>
+              <p>Don't have user credentials?<a href="" class="buyKey"> Register now!</a></p>
+              <p>have Product Key? <a href="" id="enterProductKey">Activate Product Now!</a></p>
+            </div>
 
-export{createTopNav, createFooter}
+`
+
+export{productKeyPage,loginPage}

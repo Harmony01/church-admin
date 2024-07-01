@@ -16,4 +16,11 @@ const createWebURL = (url)=>{
     }
 }
 
-module.exports =createWebURL;
+const noToken = (url)=>{
+  return baseURL+url
+}
+
+module.exports ={
+  webURL: createWebURL, 
+  noToken
+};

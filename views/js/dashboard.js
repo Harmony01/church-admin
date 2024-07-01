@@ -1,4 +1,3 @@
-import { createTopNav, createFooter } from "./modules/pageTemplate.js";
 import { baseDeveloper } from "./modules/script.js";
 //creating page templates
 //createTopNav()
@@ -23,8 +22,13 @@ $('#logoutBtn').on('click',function(e){
 })
 
 window.dashboard.loginUser((_event,data)=>{
-  console.log(data);
-  $('#User-Name').text(data.first_name)
+  console.log(data[1]);
+  $('#User-Name').text(data[0].first_name)
+  let brandImg = `<img src="${data[1][0].logo_link}" alt="" class="img-fluid">`;
+  $('#brand-logo').html(brandImg);
+  $('#brand-name').text(data[1][0].name)
+  $('#brand-logo1').html(brandImg);
+  $('#brand-name1').text(data[1][0].name)
 })
 
 //create a new account
@@ -38,6 +42,9 @@ $('#accountShort').on('click',()=>{
 
 //attempt to create a new cashbook
 $('#newCashBook').on('click', (e)=>{
+  window.dashboard.newCashBook('new cash book command');
+})
+$('#nCB').on('click', (e)=>{
   window.dashboard.newCashBook('new cash book command');
 })
 //attempt to create a new revenue
@@ -64,15 +71,25 @@ $('#contraShort').on('click',()=>{
   createContra()
 })
 
+$('#Cont').on('click',()=>{
+  createContra()
+})
+
 $('#createDaily').on('click',(e)=>{
   createAnalysis();
 })
-
+$('#dAnal').on('click',(e)=>{
+  createAnalysis();
+})
 $('#extractBal').on('click', (e)=>{
    window.dashboard.extractBalance('extract-command');
 });
 
 $('#createRecon').on('click', (e)=>{
+  window.dashboard.creareRecon('reconciliation-command');
+})
+
+$('#bRec').on('click', (e)=>{
   window.dashboard.creareRecon('reconciliation-command');
 })
 
@@ -88,11 +105,18 @@ $('#viewCashBook').on('click', (e)=>{
 $('#activeCashBook').on('click',()=>{
   openActiveCb()
 })
+$('#vACB').on('click',()=>{
+  openActiveCb()
+})
 
 $('#cbReport').on('click',()=>{
   window.dashboard.cbReport('cashbook-report')
 })
 $('#queryAcc').on('click',()=>{
+  window.dashboard.queryAccount()
+})
+
+$('#aEnq').on('click',()=>{
   window.dashboard.queryAccount()
 })
 
@@ -109,6 +133,10 @@ $('#updateEnt').on('click', ()=>{
 })
 
 $('#printDaily').on('click',()=>{
+  window.dashboard.printDaily();
+})
+
+$('#pDaily').on('click',()=>{
   window.dashboard.printDaily();
 })
 
